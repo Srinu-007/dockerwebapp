@@ -3,6 +3,8 @@ version: "3"
 services:
  devopsdb:
    container_name: devopsdb
+   deploy:
+     replicas: 3
    image: srinu007/dockerprojectdb:V1
    ports:
      - "3306:3306"
@@ -10,6 +12,8 @@ services:
  application:
    image: srinu007/dockerproject:V1
    container_name: containerapp
+   deploy:
+     replicas: 3
    ports:
      - "1234:8080"
    depends_on:
